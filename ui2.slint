@@ -1,0 +1,67 @@
+// ui.slint
+import { VerticalBox, HorizontalBox } from "std-widgets.slint";
+
+export component PrayerTimesWindow inherits Window {
+    width: 300px;
+    height: 400px;
+    title: "Jadwal Sholat Indonesia";
+    in-out property <string> tanggal;
+    in-out property <string> imsak;
+    in-out property <string> subuh;
+    in-out property <string> dhuha;
+    in-out property <string> dzuhur;
+    in-out property <string> ashar;
+    in-out property <string> maghrib;
+    in-out property <string> isya;
+    
+    VerticalBox {
+        padding: 10px;
+        spacing: 10px;
+        
+        Text {
+            text: "Kota Semarang";
+            horizontal-alignment: center;
+            font-weight: 700;
+        }
+        
+        HorizontalBox {
+            Text { text: "Tanggal:"; }
+            Text { text: root.tanggal; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Imsak:"; }
+            Text { text: root.imsak; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Subuh:"; }
+            Text { text: root.subuh; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Dhuha:"; }
+            Text { text: root.dhuha; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Dzuhur:"; }
+            Text { text: root.dzuhur; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Ashar:"; }
+            Text { text: root.ashar; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Maghrib:"; }
+            Text { text: root.maghrib; }
+        }
+        
+        HorizontalBox {
+            Text { text: "Isya:"; }
+            Text { text: root.isya; }
+        }
+    }
+}

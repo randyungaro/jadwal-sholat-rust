@@ -1,0 +1,442 @@
+// ui.slint
+import { Button, VerticalBox } from "std-widgets.slint";
+
+export component PrayerTimesWindow inherits Window {
+    width: 360px;
+    height: 550px;
+    background: #f5f8ff;
+    title: "Jadwal Sholat Indonesia";
+    
+    in-out property <string> tanggal;
+    in-out property <string> imsak;
+    in-out property <string> subuh;
+    in-out property <string> dhuha;
+    in-out property <string> dzuhur;
+    in-out property <string> ashar;
+    in-out property <string> maghrib;
+    in-out property <string> isya;
+    
+    // Card layout
+    Rectangle {
+        width: 320px;
+        height: parent.height - 40px;
+        x: (parent.width - self.width) / 2;
+        y: 20px;
+        background: white;
+        border-radius: 12px;
+        drop-shadow-offset-x: 0px;
+        drop-shadow-offset-y: 2px;
+        drop-shadow-blur: 10px;
+        drop-shadow-color: #00000020;
+        
+        // Header title
+        Text {
+            x: 0;
+            y: 24px;
+            width: parent.width;
+            height: 32px;
+            text: "Jadwal Sholat Indonesia";
+            horizontal-alignment: center;
+            font-size: 22px;
+            color: #4169e1;
+            font-weight: 700;
+        }
+        
+        // City name input styling
+        Rectangle {
+            x: 20px;
+            y: 70px;
+            width: parent.width - 40px;
+            height: 48px;
+            border-radius: 8px;
+            border-width: 1px;
+            border-color: #e0e0e0;
+            
+            Text {
+                x: 0;
+                y: 0;
+                width: parent.width;
+                height: parent.height;
+                text: "Kota Semarang";
+                horizontal-alignment: center;
+                vertical-alignment: center;
+                font-size: 16px;
+                color: #666666;
+            }
+        }
+        
+        // Blue header for city and date
+        Rectangle {
+            x: 20px;
+            y: 130px;
+            width: parent.width - 40px;
+            height: 70px;
+            background: #4169e1;
+            border-radius: 8px;
+            
+            Text {
+                x: 0;
+                y: 10px;
+                width: parent.width;
+                height: 30px;
+                text: "KOTA SEMARANG";
+                horizontal-alignment: center;
+                font-size: 18px;
+                font-weight: 700;
+                color: white;
+            }
+            
+            Text {
+                x: 0;
+                y: 40px;
+                width: parent.width;
+                height: 20px;
+                text: root.tanggal;
+                horizontal-alignment: center;
+                font-size: 14px;
+                color: white;
+            }
+        }
+        
+        // Prayer times listings
+        Rectangle {
+            x: 20px;
+            y: 210px;
+            width: parent.width - 40px;
+            height: 300px;
+            
+            VerticalLayout {
+                spacing: 0;
+                
+                // Imsak
+                Rectangle {
+                    height: 42px;
+                    
+                    
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌙";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Imsak";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.imsak;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Subuh
+                Rectangle {
+                    height: 42px;
+                    
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌠";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Subuh";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.subuh;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Dhuha
+                Rectangle {
+                    height: 42px;
+                    
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌤";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Dhuha";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.dhuha;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Dzuhur
+                Rectangle {
+                    height: 42px;
+                   
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "☀️";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Dzuhur";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.dzuhur;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Ashar
+                Rectangle {
+                    height: 42px;
+                    
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌤";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Ashar";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.ashar;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Maghrib
+                Rectangle {
+                    height: 42px;
+                    
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌆";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Maghrib";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.maghrib;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                
+                // Isya
+                Rectangle {
+                    height: 42px;
+                    
+                    HorizontalLayout {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        alignment: space-between;
+                        
+                        HorizontalLayout {
+                            spacing: 8px;
+                            alignment: start;
+                            
+                            Rectangle {
+                                width: 24px;
+                                height: 24px;
+                                y: (parent.height - self.height) / 2;
+                                
+                                Text {
+                                    text: "🌙";
+                                    font-size: 16px;
+                                    width: 100%;
+                                    height: 100%;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                            }
+                            
+                            Text {
+                                text: "Isya";
+                                y: (parent.height - self.height) / 2;
+                                font-size: 16px;
+                                color: #333333;
+                            }
+                        }
+                        
+                        Text {
+                            text: root.isya;
+                            y: (parent.height - self.height) / 2;
+                            font-size: 16px;
+                            color: #333333;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
